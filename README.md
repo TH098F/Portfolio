@@ -1,5 +1,6 @@
 # About
-### This is a fork of theMelone2's portfolio
+- This is a fork of theMelone2's portfolio
+- it will be usable as a general portfolio for anyone, when finished
 
 ## Features
 
