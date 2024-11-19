@@ -233,7 +233,7 @@ export interface Config {
         other: Skills[]
     },
     projects: Project[],
-    introduction?: string,
+    // introduction?: string,
     links?: {
         github?: string,
         email?: string,
