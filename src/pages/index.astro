@@ -6,53 +6,23 @@ import Projects from '../components/Projects.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import projectdata from '../_data/projects.json';
 import contributionsdata from '../_data/contributions.json';
 
+import { ProjectTags, Skills } from '../../config/config_types';
+import config from '../_data/config';
+
+import * as introduction from '../_data/introduction.md';
+
+const typeWriterWords = config.typewrite_words;
+
+const frontend_skills = config.skills.front_end;
+const backend_skills = config.skills.back_end;
+const tech_skills = config.skills.tech;
+const other_skills = config.skills.other;
+
+const projects = config.projects;
+
 const contributions = contributionsdata;
-
-
-const filteredProjects = projectdata.filter(project => project.published);
-
-
-const frontendskills = [
-	{ name: 'HTML', color: '#ff3300'},
-	{ name: 'CSS', color: '#2071fe'},
-	{ name: 'JavaScript', color: '#fff700'},
-	// typescript
-	{ name: 'TypeScript', color: '#3178C6', link: 'https://www.typescriptlang.org' },
-	{ name: 'React', color: '#61DBFB', link: 'https://react.dev' },
-	{ name: 'Bootstrap', color: '#7952B3', link: 'https://getbootstrap.com' },
-	{ name: 'Tailwind CSS', color: '#06B6D4', link: 'https://tailwindcss.com' },
-	{ name: 'Next.js', color: '#eee', link: 'https://nextjs.org' },
-	{ name: 'Astro', color: '#FF3E00', link: 'https://astro.build'},
-];
-
-const backendskills = [
-	{ name: 'Node.js', color: '#68A063', link: 'https://nodejs.org' },
-	{ name: 'Express.js', color: '#eee', link: 'https://expressjs.com' },
-	{ name: 'MongoDB', color: '#47A248', link: 'https://www.mongodb.com' },
-	{ name: 'MySQL', color: '#FFD700', link: 'https://www.mysql.com' },
-	{ name: 'REST', color: '#FF5733' },
-];
-
-const techskills = [
-	{ name: 'Git', color: '#F34F29', link: 'https://git-scm.com' },
-	{ name: 'GitHub', color: '#eee', link: 'https://github.com' },
-	{ name: 'VS Code', color: '#007ACC', link: 'https://code.visualstudio.com' },
-	{ name: 'Netlify', color: '#00C7B7', link: 'https://www.netlify.com' },
-];
-
-const otherskills = [
-	{ name: 'Figma', color: '#F24E1E', link: 'https://www.figma.com' },
-	{ name: 'Video Editing', color: '#FF5733' },
-	{ name: 'SEO', color: '#47A248' },
-	{ name: 'Google Firebase', color: '#FFA000', link: 'https://firebase.google.com' }
-];
-
-	
-const projects = filteredProjects;
-
 ---
 
 <Layout title="the.melon's portfolio">
@@ -60,7 +30,7 @@ const projects = filteredProjects;
   <br>
   <main>
 	<div class="introduction">
-		<h1 id="name">Hey! I'm<br><span class="text-gradient">the.melon</span></h1>
+		<h1 id="name">Hey! I'm<br><span class="text-gradient">{config.name}</span></h1>
 		<br>
 		<p id="typewriter"><i class="fa fa-arrow-right"></i> <span class="welcome-text"></span> <i class="fa fa-arrow-left"></i></p>
 		<style>
@@ -84,10 +54,9 @@ const projects = filteredProjects;
 			}
 		}
 		</style>
-		<script>
-			const words = ["Welcome to my portfolio!", "I'm a web developer from Germany.", "I'm a Web Designer.", "I'm a Product Tester.", "I'm a melon? :O"];
+		<script define:vars={{typeWriterWords}}>
+			const words = typeWriterWords;
 			let i = 0;
-			let j = 0;
 			let currentWord = 0;
 			let currentText = "";
 			let isDeleting = false;
@@ -129,61 +98,47 @@ const projects = filteredProjects;
 			typeWriter();
 		</script>
 		<nav class="nav-icons">
-			<a href="https://github.com/TheMelone2" id="github"><i class="fab fa-github"></i></a>
-			<a href="https://discord.com/users/687316434480922664" id="discord"><i class="fab fa-discord"></i></a>
-			<a href="mailto:melon@easysystems.live" id="email"><i class="fa fa-envelope"></i></a>			
+			{config.links.github ? <a href={config.links.github} id="github"><i class="fab fa-github"></i></a> : <></>}
+			{config.links.discord ? <a href={config.links.discord} id="discord"><i class="fab fa-discord"></i></a> : <></>}
+			{config.links.email ? <a href={config.links.email} id="email"><i class="fa fa-envelope"></i></a> : <></>}
 		</nav>
 	</div>
 	<h4 id="aboutme">About me:</h4>
 	<p id="abt-text">
-		Heya!
-		<br>
-		I'm a web developer based in Germany. I'm currently working on a few projects and learning new things every day. I'm always open to new ideas and projects, so feel free to contact me if you have any questions or want to work with me.
-		<br>
-		<br>
-		Currently I'm working on <b><a href="https://easysystems.live">EasySystems</a></b> a german company that make Discord Apps (formerly known as "bots"). <br>At EasySystems I'm responsible for many tasks for example the legal things, the communication between the team and the customers / users and much more like managing & developing the EasyThreads Website (currently discontiuned) and the EasySystems Docs.
-		<br>
-		<br>
-		Besides that I'm part of the Lab Assistant and the <a href="https://discord.com/wumpus-feedback-squad" target="_blank" rel="noopener noreferrer"><b>Wumpus Feedback Squad</b></a> program. Our goal there is to provide Discord valuable insights on new or current features as for instance the <a href="https://dis.gd/activities" target="_blank" rel="noopener noreferrer"><b>Discord Activities</b></a>.
-		<br>
-		<br>
-		When I'm not working on projects, I'm usually playing games with my friends, making music, doing sports, or working with our volunteer fire department and much more! :)
-		<br>
-		<br>
-		Feel free to <a href="/#contact"><b>contact me</b></a> if you have any questions or want to work with me. I'm always open to new ideas and projects. (. ❛ ᴗ ❛.)
+		<Fragment set:html={introduction.compiledContent()}/>
 	</p>
 	<hr>
 	<br>
     <ul role="list" class="link-card-grid">
       <Card
         title="Frontend Skills:"
-        skills={frontendskills}
+        skills={frontend_skills}
       />
       <Card
         title="Backend Skills:"
-		skills={backendskills}
+		skills={backend_skills}
       />
       <Card
         title="Tech Skills:"
-		skills={techskills}
+		skills={tech_skills}
       />
       <Card
         title="Other Skills:"
-		skills={otherskills}
+		skills={other_skills}
       />
     </ul>
-	<h2 id="projects">Used in many projects... like:</h2>
+	<h2 id="projects">Projects:</h2>
     <div class="projects">
         {projects.map((project) => (
             <Projects
-				projectname={project.projectname}
-				projectid={project.projectid}
-				projectdescription={project.projectdescription}
-				technologies={project.technologies.map((tech: any) => ({ ...tech, icon: "" }))}
-				projecttags={project.projecttags}
-				projectpreview={project.projectpreview}
-				projectlinks={project.projectlinks}
-				></Projects>
+				projectname={project.name}
+				projectid={""}
+				projectdescription={project.desc}
+				technologies={project.technologies.map((tech) => ({name: Skills.name(tech), color: Skills.color(tech), icon: Skills.icon(tech)}))}
+				projecttags={project.tags.map((t) => ({name: ProjectTags.string(t)}))}
+				projectpreview={project.preview}
+				projectlinks={{github: "", live: ""}}
+			></Projects>
         ))}
     </div>
 	<div class="contributions">
@@ -211,7 +166,7 @@ const projects = filteredProjects;
 			Besides that I often help on other projects too! I love to translating stuff so I translate stuff in my free time - for example I helped translating some stuff on the <a href="https://www.electronjs.org/" target="_blank" rel="noopener noreferrer"><b>Electron framework</b></a> website, on the <a href="https://hypixel.net" target="_blank" rel="noopener noreferrer"><b>Hypixel Minecraft Server</b></a> (into German) or on the <a href="https://pridebot.xyz" target="_blank" rel="noopener noreferrer"><b>Pridebot</b></a> (Discord Bot / App - also translated into German).
 		</p>
 	</div>
-	
+
 	{contributionsdata.map((contribution) => (
 		<Contributions
 			name={contribution.name}
@@ -236,7 +191,7 @@ const projects = filteredProjects;
 	:root {
 		scroll-behavior: smooth;
 	}
-	
+
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -287,7 +242,7 @@ const projects = filteredProjects;
     }
 	h1#name:hover {
 		cursor: pointer;
-	}   
+	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
@@ -306,7 +261,7 @@ const projects = filteredProjects;
 		padding: 0;
 	}
 
-	
+
 	.introduction {
 		text-align: center;
 		margin-bottom: 10rem;
@@ -372,10 +327,10 @@ const projects = filteredProjects;
 		100% {
 			transform: scale(1.1);
 			}
-				
+
 	}
 	#abt-text a{
 		color: rgb(var(--accent-light));
 		text-decoration: none;
 	}
-</style>	
+</style>

@@ -1,63 +1,12 @@
 ---
+import { Skills } from '../../config/config_types';
+
 interface Props {
   title: string;
-  skills: { name: string; color: string; link?: string }[];
+  skills: Skills[];
 }
 
 const { title, skills } = Astro.props;
-
-function getIconClass(skillName) {
-  switch (skillName) {
-    case 'HTML':
-      return 'fab fa-html5';
-    case 'CSS':
-      return 'fab fa-css3-alt';
-    case 'JavaScript':
-      return 'fab fa-js';
-    case 'React':
-      return 'fab fa-react';
-    case 'Bootstrap':
-      return 'fab fa-bootstrap';
-    case 'Sass':
-      return 'fab fa-sass';
-	case 'Node.js':
-		return 'fab fa-node-js';
-	case 'Express.js':
-		return 'fas fa-server';
-	case 'MongoDB':
-		return 'lni lni-mongodb';
-	case 'Git':
-		return 'fab fa-git-alt';
-	case 'GitHub':
-		return 'fab fa-github';
-	case 'VS Code':
-		return 'lni lni-vs-code';
-	case 'Figma':
-		return 'fab fa-figma';
-	case 'MySQL':
-		return 'lni lni-mysql';
-	case 'REST':
-		return 'fas fa-network-wired';
-	case 'Astro': 
-		return 'fas fa-rocket';
-	case 'Netlify':
-		return 'lni lni-netlify';
-	case 'Video Editing':
-		return 'fas fa-video';
-	case 'SEO':
-		return 'fas fa-search';
-	case 'Google Firebase':
-		return 'lni lni-firebase';
-	case 'Tailwind CSS':
-		return 'lni lni-tailwindcss';
-	case 'Next.js':
-		return 'lni lni-nextjs';
-	case 'TypeScript':
-		return 'lni lni-typescript';
-    default:
-      return '';
-  }
-}
 ---
 
 
@@ -68,14 +17,14 @@ function getIconClass(skillName) {
     </h2>
     <ul>
 	{skills.map(skill => (
-		<li key={skill.name}>
-			{skill.link ? (
-				<a href={skill.link} target="_blank" rel="noopener noreferrer">
-					<i class={getIconClass(skill.name)} style={{ color: skill.color }}></i> {skill.name}
+		<li key={skill}>
+			{Skills.link(skill) ? (
+				<a href={Skills.link(skill)} target="_blank" rel="noopener noreferrer">
+					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
 				</a>
 			) : (
 				<>
-					<i class={getIconClass(skill.name)} style={{ color: skill.color }}></i> {skill.name}
+					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
 				</>
 			)}
 		</li>
@@ -109,7 +58,7 @@ function getIconClass(skillName) {
 	}
 	.link-card a {
 		color: white;
-		text-decoration: none;	
+		text-decoration: none;
 	}
 	h2 {
 		margin: 0;
@@ -122,7 +71,7 @@ function getIconClass(skillName) {
 	}
 
 	.link-card ul {
-		list-style: none;	
+		list-style: none;
 	}
 	.link-card li:is(:hover, :focus-within) {
 		color: rgb(var(--accent-light));
@@ -145,7 +94,7 @@ function getIconClass(skillName) {
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
 
-	} 
+	}
 	.link-card a:hover {
 		color: rgb(var(--accent-light));
 		cursor: pointer;
