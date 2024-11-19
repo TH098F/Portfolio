@@ -1,9 +1,9 @@
 ---
-import { Skills } from '../../config/config_types';
+import { SkillMap } from '../../config/config_types';
 
 interface Props {
   title: string;
-  skills: Skills[];
+  skills: string[];
 }
 
 const { title, skills } = Astro.props;
@@ -18,15 +18,15 @@ const { title, skills } = Astro.props;
     <ul>
 	{skills.map(skill => (
 		<li key={skill}>
-			{Skills.link(skill) ? (
-				<a href={Skills.link(skill)} target="_blank" rel="noopener noreferrer">
-					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
+			{SkillMap[skill] ? SkillMap[skill].link ? (
+				<a href={SkillMap[skill].link} target="_blank" rel="noopener noreferrer">
+					<i class={SkillMap[skill].icon} style={{ color: SkillMap[skill].color }}></i> {skill}
 				</a>
 			) : (
 				<>
-					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
+					<i class={SkillMap[skill].icon} style={{ color: SkillMap[skill].color }}></i> {skill}
 				</>
-			)}
+			) : <><i class=""></i> INVALID_SKILL_NAME</>}
 		</li>
 	))}
     </ul>

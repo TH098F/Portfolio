@@ -5,28 +5,28 @@ const config: Config = {
     name: "TH098",
     skills: {
         back_end: [
-            Skills.Cpp,
-            Skills.C,
-            Skills.Python,
-            Skills.NodeJS,
-            Skills.Rust
+            "C++",
+            "C",
+            "Python",
+            "Node.js",
+            "Rust"
         ],
         front_end: [
-            Skills.HTML,
-            Skills.CSS,
-            Skills.Astro,
-            Skills.JavaScript,
-            Skills.TypeScript
+            "HTML",
+            "CSS",
+            "Astro",
+            "JavaScript",
+            "TypeScript"
         ],
         tech: [
-            Skills.VSCode,
-            Skills.Git,
-            Skills.GitHub,
-            Skills.MySQL
+            "VS Code",
+            "Git",
+            "GitHub",
+            "MySQL"
         ],
         other: []
     },
-    projects: [{name: "test", tags: [ProjectTags.OpenSource], technologies: [Skills.JavaScript]}],
+    projects: [{name: "test", tags: ["Open-Source"], technologies: ["JavaScript"]}],
     links: {
         github: "https://github.com/TH098F",
         email: "mailto:th098f@proton.me"
