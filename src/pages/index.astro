@@ -174,9 +174,9 @@ const contributions = contributionsdata;
 		/>
 	))} -->
 
-	<p id="afterword">
-		<Fragment set:html={afterword.compiledContent()}/>
-	</p>
+	<div id="afterword">
+		<Fragment set:html={afterword.compiledContent()}></Fragment>
+	</div>
 	<Guestbook />
   </main>
   <Footer />
@@ -326,6 +326,11 @@ const contributions = contributionsdata;
 
 	}
 	#abt-text a {
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+	}
+
+	#afterword a {
 		color: rgb(var(--accent-light));
 		text-decoration: none;
 	}
