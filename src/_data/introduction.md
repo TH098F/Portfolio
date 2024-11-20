@@ -1,7 +1,11 @@
-Do eu labore occaecat voluptate amet enim. Dolore adipisicing deserunt eiusmod consequat. Aute consequat adipisicing exercitation in. Voluptate anim anim quis qui aliquip aliqua consectetur labore. Mollit magna cupidatat duis occaecat aute Lorem labore dolore consectetur. Nostrud ad nostrud elit qui. Esse quis est in velit eu enim duis.
+Hello!
+I'm a Full-Stack developer from Germany. I started programming when I was pretty young and have gathered a lot of experience since then. I'm always open for new ideas, so feel free to contact me!
 
-Sunt magna magna nulla aliqua id. Tempor fugiat officia ea id sunt exercitation sint labore nostrud. Pariatur ullamco incididunt et officia qui reprehenderit. Voluptate nulla deserunt culpa enim duis minim. Occaecat ea laboris dolor mollit id officia laboris quis consectetur mollit nulla cupidatat ea. Tempor consequat non magna ut Lorem enim officia reprehenderit in aliqua nostrud.
+My main project right now is my API-agnostic rendering engine: "Arch". although I also work on other project every now and then.
+I have mostly been doing projects by myself until now, but i hope that this will change in the near future.
 
-Velit dolore ad officia enim aliqua. Esse labore minim consectetur velit nisi amet eu mollit labore enim. Sint qui id qui fugiat labore magna cillum. Ad aliqua eu irure sit deserunt qui Lorem cupidatat commodo esse. Veniam minim eu aliquip pariatur dolore velit consequat deserunt laborum occaecat fugiat ut Lorem voluptate. Deserunt mollit enim deserunt ad aliquip. Mollit deserunt ad veniam nulla nisi culpa cupidatat ullamco proident eiusmod et nostrud.
+I go to the gym regularly when I'm not working on projects, or am otherwise occupied.
 
-Amet sint tempor proident ad. Ad eu aliqua adipisicing sint enim minim ullamco non do adipisicing pariatur minim. Eu exercitation in amet in voluptate nostrud aliquip officia excepteur aliqua anim pariatur est. Anim officia sit labore ipsum dolor laborum laborum Lorem deserunt sint laborum culpa. Deserunt qui enim ea anim voluptate amet excepteur commodo minim eiusmod et. Aute consectetur velit anim occaecat dolore est deserunt cillum nostrud reprehenderit anim. Nulla aliqua id pariatur non minim.
+Fun fact: I taught myself JavaScript in about 30 minutes after watching [Fireship](youtube.com/@fireship)'s [100 seconds of JavaScript](https://www.youtube.com/watch?v=aXOChLn5ZdQ) video. But thats only because JS is so similar to C, and I'm already a good C dev.
+
+I don't know what to say here anymore. If you have questions, advice, etc: message me.

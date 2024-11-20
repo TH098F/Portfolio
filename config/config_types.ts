@@ -10,7 +10,8 @@ export enum Skill {
     HTML, CSS,
     React, Angular, Vue, NodeJS, ExpressJS, Astro,
     SQL, MySQL, SQLite, PostGreSQL, MongoDB, REST,
-    VSCode, Git, GitHub
+    VSCode, Git, GitHub,
+    Vulkan, DirectX, OpenGL
 };
 
 export const Skills = new Map<Skill, SkillEntry>([
@@ -46,8 +47,8 @@ export const Skills = new Map<Skill, SkillEntry>([
     [Skill.Astro, { name: "Astro", color: "#FF3E00", icon: "fas fa-rocket", link: "https://astro.build" }],
 
     // DB
-    [Skill.SQL, { name: "SQL", color: "#000000", icon: "", link: "" }],
-    [Skill.MySQL, { name: "MySQL", color: "#FFD700", icon: "lni lni-mysql", link: "" }],
+    [Skill.SQL, { name: "SQL", color: "#FFFFFF", icon: "fa fa-database", link: "" }],
+    [Skill.MySQL, { name: "MySQL", color: "#FFD700", icon: "lni lni-mysql", link: "https://mysql.com" }],
     [Skill.SQLite, { name: "SQLite", color: "#000000", icon: "", link: "" }],
     [Skill.PostGreSQL, { name: "PostGreSQL", color: "#000000", icon: "", link: "" }],
     [Skill.MongoDB, { name: "MongoDB", color: "#47A248", icon: "lni lni-mongodb", link: "" }],
@@ -55,8 +56,12 @@ export const Skills = new Map<Skill, SkillEntry>([
 
     // TECH
     [Skill.VSCode, { name: "VS Code", color: "#007ACC", icon: "lni lni-vs-code", link: "https://code.visualstudio.com" }],
-    [Skill.Git, { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "" }],
-    [Skill.GitHub, { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "" }],
+    [Skill.Git, { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "https://git-scm.com" }],
+    [Skill.GitHub, { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "https://github.com" }],
+
+    [Skill.Vulkan, { name: "Vulkan", color: "#000000", icon: "", link: "https://vulkan.org" }],
+    [Skill.DirectX, { name: "DirectX", color: "#000000", icon: "", link: "" }],
+    [Skill.OpenGL, { name: "OpenGL", color: "#000000", icon: "", link: "https://opengl.org" }],
 ]);
 
 interface ProjectTagEntry {
@@ -68,16 +73,26 @@ export enum ProjectTag {
     FullStack,
     FrontEnd,
     BackEnd,
+    WebDev,
+
     OpenSource,
-    ClosedSource
+    ClosedSource,
+
+    Tools,
+    Games,
+    Graphics
 }
 
 export const ProjectTags = new Map<ProjectTag, ProjectTagEntry>([
     [ProjectTag.FullStack, { name: "Full-Stack", icon: "" }],
     [ProjectTag.FrontEnd, { name: "Front-End", icon: "" }],
     [ProjectTag.BackEnd, { name: "Back-End", icon: "" }],
+    [ProjectTag.WebDev, { name: "Web Development", icon: "" }],
     [ProjectTag.OpenSource, { name: "Open-Source", icon: "" }],
     [ProjectTag.ClosedSource, { name: "Closed-Source", icon: "" }],
+    [ProjectTag.Tools, { name: "Tools", icon: "" }],
+    [ProjectTag.Games, { name: "Games", icon: "" }],
+    [ProjectTag.Graphics, { name: "Graphics", icon: "" }],
 ]);
 
 export interface Project {
