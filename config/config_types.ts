@@ -84,15 +84,15 @@ export enum ProjectTag {
 }
 
 export const ProjectTags = new Map<ProjectTag, ProjectTagEntry>([
-    [ProjectTag.FullStack, { name: "Full-Stack", icon: "" }],
-    [ProjectTag.FrontEnd, { name: "Front-End", icon: "" }],
-    [ProjectTag.BackEnd, { name: "Back-End", icon: "" }],
-    [ProjectTag.WebDev, { name: "Web Development", icon: "" }],
-    [ProjectTag.OpenSource, { name: "Open-Source", icon: "" }],
-    [ProjectTag.ClosedSource, { name: "Closed-Source", icon: "" }],
-    [ProjectTag.Tools, { name: "Tools", icon: "" }],
-    [ProjectTag.Games, { name: "Games", icon: "" }],
-    [ProjectTag.Graphics, { name: "Graphics", icon: "" }],
+    [ProjectTag.FullStack, { name: "Full-Stack", icon: "fas fa-server" }],
+    [ProjectTag.FrontEnd, { name: "Front-End", icon: "fas fa-desktop" }],
+    [ProjectTag.BackEnd, { name: "Back-End", icon: "fas fa-cogs" }],
+    [ProjectTag.WebDev, { name: "Web Development", icon: "fas fa-globe" }],
+    [ProjectTag.OpenSource, { name: "Open-Source", icon: "fas fa-code" }],
+    [ProjectTag.ClosedSource, { name: "Closed-Source", icon: "fas fa-code" }],
+    [ProjectTag.Tools, { name: "Tools", icon: "fas fa-code" }],
+    [ProjectTag.Games, { name: "Games", icon: "fas fa-gamepad" }],
+    [ProjectTag.Graphics, { name: "Graphics", icon: "fas fa-code" }],
 ]);
 
 export interface Project {
