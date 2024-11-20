@@ -39,7 +39,11 @@ const config: Config = {
         {
             name: "Portfolio", tags: [ProjectTag.OpenSource, ProjectTag.WebDev], technologies: [Skill.TypeScript, Skill.Astro, Skill.CSS],
             desc: "This Portfolio is a fork of theMelon's portfolio. I wanted to turn his portfolio into a dynamic version which could then be used as an easy to use 'template'.",
-            preview: "portfolio_v2/portfolioPreview.png"
+            preview: "portfolio_v2/portfolioPreview.png",
+            links: {
+                github: "https://github.com/TH098F/portfolio_v2",
+                live: "https://th098f.github.io/portfolio_v2"
+            }
         }
     ],
     links: {

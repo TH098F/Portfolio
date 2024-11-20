@@ -138,7 +138,7 @@ const contributions = contributionsdata;
 				technologies={project.technologies}
 				projecttags={project.tags}
 				projectpreview={project.preview}
-				projectlinks={{github: "", live: ""}}
+				projectlinks={project.links ? {github: project.links.github ? project.links.github : "", live: project.links.live ? project.links.live : ""} : {github:"",live:""}}
 			></Projects>
         ))}
     </div>

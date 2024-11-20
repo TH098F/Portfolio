@@ -100,7 +100,11 @@ export interface Project {
     tags: ProjectTag[],
     technologies: Skill[],
     preview?: string,
-    desc?: string
+    desc?: string,
+    links?: {
+        github?: string,
+        live?: string
+    }
 };
 
 //TODO: add contributions
