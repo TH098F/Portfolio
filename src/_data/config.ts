@@ -1,7 +1,7 @@
 import {type Config, ProjectTag, Skill} from '../../config/config_types.ts';
 
 const config: Config = {
-    url: "http://localhost",
+    url: "http://th098f.github.io",
     name: "TH098",
     skills: {
         back_end: [
