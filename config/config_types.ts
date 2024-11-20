@@ -3,76 +3,82 @@ interface SkillEntry {
     color: string, // TODO: maybe make this into actual color type
     icon: string, // CSS class(es) of the icon
     link: string
-}
+};
 
-export const Skills: SkillEntry[] = [
+export enum Skill {
+    C, Cpp, CSharp, Python, Rust, Java, JavaScript, TypeScript, PHP, Ruby, Go, Swift, Kotlin, Elixir, Erlang, Lua, Perl,
+    HTML, CSS,
+    React, Angular, Vue, NodeJS, ExpressJS, Astro,
+    SQL, MySQL, SQLite, PostGreSQL, MongoDB, REST,
+    VSCode, Git, GitHub
+};
+
+export const Skills = new Map<Skill, SkillEntry>([
     // languages
-    { name: "C", color: "#000000", icon: "", link: "" },
-    { name: "C++", color: "#000000", icon: "", link: "" },
-    { name: "C#", color: "#000000", icon: "", link: "" },
-    { name: "Python", color: "#000000", icon: "", link: "" },
-    { name: "Rust", color: "#000000", icon: "", link: "" },
-    { name: "Java", color: "#000000", icon: "", link: "" },
-    { name: "JavaScript", color: "#fff700", icon: "fab fa-js", link: "" },
-    { name: "TypeScript", color: "#3178C6", icon: "lni lni-typescript", link: "https://www.typescriptlang.org" },
-    { name: "PHP", color: "#000000", icon: "", link: "" },
-    { name: "Ruby", color: "#000000", icon: "", link: "" },
-    { name: "Go", color: "#000000", icon: "", link: "" },
-    { name: "Swift", color: "#000000", icon: "", link: "" },
-    { name: "Kotlin", color: "#000000", icon: "", link: "" },
-    { name: "Elixir", color: "#000000", icon: "", link: "" },
-    { name: "Erlang", color: "#000000", icon: "", link: "" },
-    { name: "Lua", color: "#000000", icon: "", link: "" },
-    { name: "Perl", color: "#000000", icon: "", link: "" },
+    [Skill.C, { name: "C", color: "#000000", icon: "", link: "" }],
+    [Skill.Cpp, { name: "C++", color: "#000000", icon: "", link: "" }],
+    [Skill.CSharp, { name: "C#", color: "#000000", icon: "", link: "" }],
+    [Skill.Python, { name: "Python", color: "#000000", icon: "", link: "" }],
+    [Skill.Rust, { name: "Rust", color: "#000000", icon: "", link: "" }],
+    [Skill.Java, { name: "Java", color: "#000000", icon: "", link: "" }],
+    [Skill.JavaScript, { name: "JavaScript", color: "#fff700", icon: "fab fa-js", link: "" }],
+    [Skill.TypeScript, { name: "TypeScript", color: "#3178C6", icon: "lni lni-typescript", link: "https://www.typescriptlang.org" }],
+    [Skill.PHP, { name: "PHP", color: "#000000", icon: "", link: "" }],
+    [Skill.Ruby, { name: "Ruby", color: "#000000", icon: "", link: "" }],
+    [Skill.Go, { name: "Go", color: "#000000", icon: "", link: "" }],
+    [Skill.Swift, { name: "Swift", color: "#000000", icon: "", link: "" }],
+    [Skill.Kotlin, { name: "Kotlin", color: "#000000", icon: "", link: "" }],
+    [Skill.Elixir, { name: "Elixir", color: "#000000", icon: "", link: "" }],
+    [Skill.Erlang, { name: "Erlang", color: "#000000", icon: "", link: "" }],
+    [Skill.Lua, { name: "Lua", color: "#000000", icon: "", link: "" }],
+    [Skill.Perl, { name: "Perl", color: "#000000", icon: "", link: "" }],
 
     // web
-    { name: "HTML", color: "#ff3300", icon: "fab fa-html5", link: "" },
-    { name: "CSS", color: "#2071fe", icon: "fab fa-css3-alt", link: "" },
+    [Skill.HTML, { name: "HTML", color: "#ff3300", icon: "fab fa-html5", link: "" }],
+    [Skill.CSS, { name: "CSS", color: "#2071fe", icon: "fab fa-css3-alt", link: "" }],
 
     // JS
-    { name: "React", color: "#61DBFB", icon: "fab fa-react", link: "https://react.dev" },
-    { name: "Angular", color: "#000000", icon: "", link: "" },
-    { name: "Vue", color: "#000000", icon: "", link: "" },
-    { name: "Node.js", color: "#000000", icon: "", link: "" },
-    { name: "Express.js", color: "#000000", icon: "", link: "" },
-    { name: "Astro", color: "#FF3E00", icon: "fas fa-rocket", link: "https://astro.build" },
+    [Skill.React, { name: "React", color: "#61DBFB", icon: "fab fa-react", link: "https://react.dev" }],
+    [Skill.Angular, { name: "Angular", color: "#000000", icon: "", link: "" }],
+    [Skill.Vue, { name: "Vue", color: "#000000", icon: "", link: "" }],
+    [Skill.NodeJS, { name: "Node.js", color: "#000000", icon: "", link: "" }],
+    [Skill.ExpressJS, { name: "Express.js", color: "#000000", icon: "", link: "" }],
+    [Skill.Astro, { name: "Astro", color: "#FF3E00", icon: "fas fa-rocket", link: "https://astro.build" }],
 
     // DB
-    { name: "SQL", color: "#000000", icon: "", link: "" },
-    { name: "MySQL", color: "#FFD700", icon: "lni lni-mysql", link: "" },
-    { name: "SQLite", color: "#000000", icon: "", link: "" },
-    { name: "PostGreSQL", color: "#000000", icon: "", link: "" },
-    { name: "MongoDB", color: "#47A248", icon: "lni lni-mongodb", link: "" },
-    { name: "REST", color: "#FF5733", icon: "fas fa-network-wired", link: "" },
+    [Skill.SQL, { name: "SQL", color: "#000000", icon: "", link: "" }],
+    [Skill.MySQL, { name: "MySQL", color: "#FFD700", icon: "lni lni-mysql", link: "" }],
+    [Skill.SQLite, { name: "SQLite", color: "#000000", icon: "", link: "" }],
+    [Skill.PostGreSQL, { name: "PostGreSQL", color: "#000000", icon: "", link: "" }],
+    [Skill.MongoDB, { name: "MongoDB", color: "#47A248", icon: "lni lni-mongodb", link: "" }],
+    [Skill.REST, { name: "REST", color: "#FF5733", icon: "fas fa-network-wired", link: "" }],
 
     // TECH
-    { name: "VS Code", color: "#007ACC", icon: "lni lni-vs-code", link: "https://code.visualstudio.com" },
-    { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "" },
-    { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "" },
-]
-type Skill = string;
-export const SkillMap = Skills.reduce((acc, s) => {
-    acc[s.name] = {color: s.color, icon: s.icon, link: s.link}
-    return acc;
-}, {} as Record<string, {color: string, icon: string, link: string}>);
+    [Skill.VSCode, { name: "VS Code", color: "#007ACC", icon: "lni lni-vs-code", link: "https://code.visualstudio.com" }],
+    [Skill.Git, { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "" }],
+    [Skill.GitHub, { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "" }],
+]);
 
-export interface ProjectTagEntry {
+interface ProjectTagEntry {
     name: string,
     icon: string
 }
 
-export const ProjectTags: ProjectTagEntry[] = [
-    { name: "Full-Stack", icon: "" },
-    { name: "Front-End", icon: "" },,
-    { name: "Back-End", icon: "" },,
-    { name: "Open-Source", icon: "" },,
-    { name: "Closed-Source", icon: "" },
-];
-type ProjectTag = string;
-export const ProjectTagMap = ProjectTags.reduce((acc, s) => {
-    acc[s.name] = {icon: s.icon}
-    return acc;
-}, {} as Record<string, {icon: string}>);
+export enum ProjectTag {
+    FullStack,
+    FrontEnd,
+    BackEnd,
+    OpenSource,
+    ClosedSource
+}
+
+export const ProjectTags = new Map<ProjectTag, ProjectTagEntry>([
+    [ProjectTag.FullStack, { name: "Full-Stack", icon: "" }],
+    [ProjectTag.FrontEnd, { name: "Front-End", icon: "" }],
+    [ProjectTag.BackEnd, { name: "Back-End", icon: "" }],
+    [ProjectTag.OpenSource, { name: "Open-Source", icon: "" }],
+    [ProjectTag.ClosedSource, { name: "Closed-Source", icon: "" }],
+]);
 
 export interface Project {
     name: string,
