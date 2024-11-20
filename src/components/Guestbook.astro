@@ -1,26 +1,29 @@
+---
+const maxChars = 585;
+---
 <div class="guestbook">
     <h2>The Guest Book</h2>
     <p>
-        Leave a message! Any messages your write remain on your device.
+        Leave a message! Any messages your write remains on your device.
     </p>
     <form>
         <textarea name="message" placeholder="Your message"></textarea>
-        <span id="chars-left"><span id="chars_left">585</span> characters left</span>
+        <span id="chars-left"><span id="chars_left">{maxChars}</span> characters left</span>
         <button type="button" id="submit-btn" name="submit">Submit</button>
     </form>
     <hr>
     <br>
 </div>
 
-<script>
+<script define:vars={{maxChars}}>
     document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector('textarea').addEventListener('input', function() {
-            if (this.value.length > 585) {
-                alert('Too long! You have only 585 characters for your message. Sorry!');
-                this.value = this.value.substring(0, 585);
+            if (this.value.length > maxChars) {
+                alert('Too long! You have only' + maxChars + 'characters for your message. Sorry!');
+                this.value = this.value.substring(0, maxChars);
             }
-            document.getElementById('chars_left').innerText = String(585 - this.value.length);
+            document.getElementById('chars_left').innerText = String(maxChars - this.value.length);
         });
 
         document.getElementById('submit-btn').addEventListener('click', function() {

@@ -35,7 +35,7 @@ const config: Config = {
         {
             name: "Arch Engine", tags: [ProjectTag.ClosedSource, ProjectTag.Graphics], technologies: [Skill.Cpp, Skill.C, Skill.VSCode],
             desc: "Arch is an API-agnostic rendering engine built on top of Vulkan and DirectX11. I plan to extend it to DirectX12 and OpenGL in the future. Arch was originally me teaching myself Vulkan, but I later turned it into a whole project and added DirectX11 support. The Vulkan only version was written in C, but I later changed to C++ for it's OOP features",
-            preview: "archPreview.png"
+            preview: "archPreview.png" // TODO: fix that testing needs the base (/portfolio_v2) but deployment on GH pages doesn't
         },
         {
             name: "Portfolio", tags: [ProjectTag.OpenSource, ProjectTag.WebDev], technologies: [Skill.TypeScript, Skill.Astro, Skill.CSS],
