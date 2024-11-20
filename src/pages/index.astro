@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Guestbook from '../components/Guestbook.astro';
-import Contributions from '../components/Contributions.astro';
+// import Contributions from '../components/Contributions.astro';
 import Projects from '../components/Projects.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
@@ -142,10 +142,10 @@ const contributions = contributionsdata;
 			></Projects>
         ))}
     </div>
-	<div class="contributions">
+	<!-- <div class="contributions">
 		<h2>My contributions:</h2>
 		<br>
-		<table>
+		{contributionsdata ? (<table>
 			<tr>
 				<th>Project</th>
 				<th>Contribution</th>
@@ -158,11 +158,8 @@ const contributions = contributionsdata;
 					<td>{contribution.time}</td>
 				</tr>
 			))}
-		</table>
+		</table>) : (<></>)}
 		<br>
-		<p id="afterword">
-			<Fragment set:html={afterword.compiledContent()}/>
-		</p>
 	</div>
 
 	{contributionsdata.map((contribution) => (
@@ -175,10 +172,11 @@ const contributions = contributionsdata;
 			role_description={contribution.role_description}
 			time={contribution.time}
 		/>
-	))}
+	))} -->
 
-	<br>
-	<br>
+	<p id="afterword">
+		<Fragment set:html={afterword.compiledContent()}/>
+	</p>
 	<Guestbook />
   </main>
   <Footer />
