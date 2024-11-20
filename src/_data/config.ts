@@ -2,6 +2,7 @@ import {type Config, ProjectTag, Skill} from '../../config/config_types.ts';
 
 const config: Config = {
     url: "http://th098f.github.io",
+    base: "portfolio_v2",
     name: "TH098",
     skills: {
         back_end: [
@@ -34,12 +35,12 @@ const config: Config = {
         {
             name: "Arch Engine", tags: [ProjectTag.ClosedSource, ProjectTag.Graphics], technologies: [Skill.Cpp, Skill.C, Skill.VSCode],
             desc: "Arch is an API-agnostic rendering engine built on top of Vulkan and DirectX11. I plan to extend it to DirectX12 and OpenGL in the future. Arch was originally me teaching myself Vulkan, but I later turned it into a whole project and added DirectX11 support. The Vulkan only version was written in C, but I later changed to C++ for it's OOP features",
-            preview: "portfolio_v2/archPreview.png"
+            preview: "archPreview.png"
         },
         {
             name: "Portfolio", tags: [ProjectTag.OpenSource, ProjectTag.WebDev], technologies: [Skill.TypeScript, Skill.Astro, Skill.CSS],
             desc: "This Portfolio is a fork of theMelon's portfolio. I wanted to turn his portfolio into a dynamic version which could then be used as an easy to use 'template'.",
-            preview: "portfolio_v2/portfolioPreview.png",
+            preview: "portfolioPreview.png",
             links: {
                 github: "https://github.com/TH098F/portfolio_v2",
                 live: "https://th098f.github.io/portfolio_v2"

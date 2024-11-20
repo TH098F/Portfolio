@@ -110,7 +110,8 @@ export interface Project {
 //TODO: add contributions
 
 export interface Config {
-    url?: string,
+    url: string,
+    base: string,
     name: string,
     skills: {
         back_end: Skill[],
