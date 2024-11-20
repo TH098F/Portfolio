@@ -16,6 +16,7 @@ const maxChars = 585;
 </div>
 
 <script define:vars={{maxChars}}>
+
     document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector('textarea').addEventListener('input', function() {
@@ -43,9 +44,9 @@ const maxChars = 585;
                 new Date().getFullYear() + '-' +
                 (new Date().getMonth() + 1) + '-' +
                 new Date().getDate() + ' ' +
-                new Date().getHours() + ':' +
-                new Date().getMinutes() + ':' +
-                new Date().getSeconds();
+                new Date().getHours().toLocaleString(undefined, {minimumIntegerDigits: 2}) + ':' +
+                new Date().getMinutes().toLocaleString(undefined, {minimumIntegerDigits: 2}) + ':' +
+                new Date().getSeconds().toLocaleString(undefined, {minimumIntegerDigits: 2});
 
             const uniqueID =
                 Math.random().toString(36).substring(2) +
