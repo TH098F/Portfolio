@@ -135,8 +135,8 @@ const contributions = contributionsdata;
 				projectname={project.name}
 				projectid={project.name}
 				projectdescription={project.desc}
-				technologies={project.technologies.map((tech) => ({name: Skills.get(tech).name, color: Skills.get(tech).color, icon: Skills.get(tech).icon}))}
-				projecttags={project.tags.map((t) => ({name: ProjectTags.get(t).name}))}
+				technologies={project.technologies}
+				projecttags={project.tags}
 				projectpreview={project.preview}
 				projectlinks={{github: "", live: ""}}
 			></Projects>

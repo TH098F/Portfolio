@@ -37,7 +37,7 @@ const config: Config = {
         },
         {
             name: "Portfolio", tags: [ProjectTag.OpenSource, ProjectTag.WebDev], technologies: [Skill.TypeScript, Skill.Astro, Skill.CSS],
-            desc: "My Portfolio is a fork of <a href=\"theMelon.live>theMelon</a>'s portfolio. I wanted to turn his portfolio into a dynamic version which could then be used as an easy to use 'template'.\""
+            desc: "My Portfolio is a fork of theMelon's portfolio. I wanted to turn his portfolio into a dynamic version which could then be used as an easy to use 'template'.\""
         }
     ],
     links: {
