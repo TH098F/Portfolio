@@ -101,7 +101,7 @@ const contributions = contributionsdata;
 		<nav class="nav-icons">
 			{config.links.github ? <a href={config.links.github} id="github"><i class="fab fa-github"></i></a> : <></>}
 			{config.links.discord ? <a href={config.links.discord} id="discord"><i class="fab fa-discord"></i></a> : <></>}
-			{config.links.email ? <a href={config.links.email} id="email"><i class="fa fa-envelope"></i></a> : <></>}
+			{config.links.email ? <a href={"mailto:" + config.links.email} id="email"><i class="fa fa-envelope"></i></a> : <></>}
 		</nav>
 	</div>
 	<h4 id="aboutme">About me:</h4>

@@ -1,14 +1,17 @@
+---
+import config from "../_data/config";
+---
 <footer>
     <div>
         <ul>
-          <li><a href="https://ko-fi.com/themelone" target="_blank"><i class="fa fa-coffee"></i> Support me</a></li>
-          <li>Email: <a href="mailto:melon@easysystems.live">melon@easysystems.live</a></li>
-          <li><a href="https://github.com/TheMelone2" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+          <!-- <li><a href="https://ko-fi.com/themelone" target="_blank"><i class="fa fa-coffee"></i> Support me</a></li> -->
+          {config.links.email ? (<li>Email: <a href={"mailto:${config.links.email}"}>{config.links.email}</a></li>) : <></>}
+          {config.links.github ? (<li><a href={config.links.github} target="_blank"><i class="fa fa-github"></i> Github</a></li>) : <><>}
         </ul>
     </div>
     <a href="https://easysystems.live/legal" id="legal-link"><i class="fa fa-balance-scale"></i> Legal Links</a>
     <p>
-      Made with <i class="fa fa-heart" style="color: red;"></i> by the.melon © {new Date().getFullYear()}
+      Made with <i class="fa fa-heart" style="color: red;"></i> by the.melon and TH089 © {new Date().getFullYear()}
     </p>
 </footer>
 

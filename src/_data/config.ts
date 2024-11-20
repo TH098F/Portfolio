@@ -42,7 +42,7 @@ const config: Config = {
     ],
     links: {
         github: "https://github.com/TH098F",
-        email: "mailto:th098f@proton.me"
+        email: "th098f@proton.me"
     },
     typewrite_words: ["Hello I'm TH098","It's pronounced: Theo","Cinnamon Rolls"]
 };
