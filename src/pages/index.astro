@@ -105,9 +105,9 @@ const contributions = contributionsdata;
 		</nav>
 	</div>
 	<h4 id="aboutme">About me:</h4>
-	<p id="abt-text">
-		<Fragment set:html={introduction.compiledContent()}/>
-	</p>
+	<div id="abt-text">
+		<Fragment set:html={introduction.compiledContent()}></Fragment>
+	</div>
 	<hr>
 	<br>
     <ul role="list" class="link-card-grid">
@@ -325,7 +325,7 @@ const contributions = contributionsdata;
 			}
 
 	}
-	#abt-text a{
+	#abt-text a {
 		color: rgb(var(--accent-light));
 		text-decoration: none;
 	}

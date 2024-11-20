@@ -7,7 +7,7 @@
     </nav>
     <nav class="navlinks right">
         <a href="https://github.com/TheMelone2/portfolio" target="_blank" id="nav-github"><i class="fab fa-github"></i> Visit on GitHub</a>
-        <a href="mailto:melon@easysystems.live" id="nav-contact"><i class="fa fa-paper-plane"></i> Get in Touch</a>       
+        <a href="mailto:melon@easysystems.live" id="nav-contact"><i class="fa fa-paper-plane"></i> Get in Touch</a>
     </nav>
 </div>
 <style>
@@ -86,8 +86,8 @@
         content: '';
         right: 0;
         top: 0;
-        border-top: 3px solid #01ff6b7a;
-        border-right: 3px solid #01FF6B;
+        border-top: 3px solid rgba(var(--accent), 122);
+        border-right: 3px solid rgb(var(--accent));
         transform: translate(-100%, 50%);
     }
 
@@ -95,8 +95,8 @@
         content: '';
         left: 0;
         bottom: 0;
-        border-bottom: 3px solid #01ff6b7a;
-        border-left: 3px solid #01FF6B;
+        border-bottom: 3px solid rgba(var(--accent), 122);
+        border-left: 3px solid rgb(var(--accent));
         transform: translate(100%, -50%)
     }
 
@@ -107,7 +107,7 @@
     }
 
     .navlinks.left a:hover {
-        color: #01FF6B;
+        color: rgb(var(--accent));
     }
     #nav-github {
         background-color: #ffffffe0;
@@ -127,7 +127,7 @@
         animation: gradient 3s ease infinite;
     }
     #nav-contact {
-        background-color: #01FF6B;
+        background-color: rgb(var(--accent-light));
         padding: 0.5em 1em;
         border-radius: 0.5em;
         color: #000;
@@ -139,7 +139,7 @@
         background-color: #fff;
         color: #000;
         transition: all ease-in-out 0.2s;
-        background: linear-gradient(90deg, rgb(80, 255, 153) 0%, rgba(1, 255, 43, 0.596) 100%);
+        background: linear-gradient(90deg, rgb(var(--accent-light)) 0%, rgba(var(--accent), 0.596) 100%);
         background-size: 200% 200%;
         animation: gradient 3s ease infinite;
     }

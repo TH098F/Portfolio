@@ -87,7 +87,7 @@ const {
     <hr>
     <br>
     <div class="project-description">
-        <p id="text">{projectdescription.slice(0, 110)}{projectdescription.length > 110 ? '...' : ''}</p>
+        <p id="text">{projectdescription.slice(0, 500)}{projectdescription.length > 500 ? '...' : ''}</p>
         <button class="readall" id={projectid} onclick="readall()">Read all</button>
     </div>
     <div class="project-technologies">
@@ -250,7 +250,7 @@ const {
     }
 
     #link-live {
-        color: #67b886a6;
+        color: rgba(var(--accent-dark), 166);
     }
 
     #link-gh:hover {
@@ -258,7 +258,7 @@ const {
     }
 
     #link-live:hover {
-        color: #86f0af;
+        color: rgb(var(--accent-light));
     }
 
 
