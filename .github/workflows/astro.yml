@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:
 
 permissions:
@@ -31,8 +31,8 @@ jobs:
           path: .
           node-version: 20
           package-manager: npm@latest
-        
-        env: 
+
+        env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL}}
 
   deploy:
