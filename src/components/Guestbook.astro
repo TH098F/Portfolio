@@ -1,10 +1,7 @@
 <div class="guestbook">
-    <h2>the guest book</h2>
+    <h2>The Guest Book</h2>
     <p>
-        Thanks for visiting this portfolio to this point! You can write an imaginary guest book entry. Leave your current thoughts, problems,... here. Don't worry I don't & cannot share it ❤️‍🩹
-        <br>
-        <br>
-        And remember you matter for me 😊
+        Leave a message! Any messages are stored locally.
     </p>
     <form>
         <textarea name="message" placeholder="Your message"></textarea>
@@ -39,18 +36,18 @@
                 return;
             }
 
-            const date = 
-                new Date().getFullYear() + '-' + 
-                (new Date().getMonth() + 1) + '-' + 
-                new Date().getDate() + ' ' + 
-                new Date().getHours() + ':' + 
-                new Date().getMinutes() + ':' + 
+            const date =
+                new Date().getFullYear() + '-' +
+                (new Date().getMonth() + 1) + '-' +
+                new Date().getDate() + ' ' +
+                new Date().getHours() + ':' +
+                new Date().getMinutes() + ':' +
                 new Date().getSeconds();
 
-            const uniqueID = 
-                Math.random().toString(36).substring(2) + 
+            const uniqueID =
+                Math.random().toString(36).substring(2) +
                 Math.random().toString(36).substring(2);
-            
+
             const entry = document.createElement('div');
             entry.className = 'guestbook-entry';
             entry.id = uniqueID;
@@ -70,7 +67,7 @@
             document.querySelector('.guestbook').appendChild(entry);
         });
         const entries = Object.keys(localStorage).filter(key => key !== 'length');
-        
+
         entries.forEach(entry => {
             const data = JSON.parse(localStorage.getItem(entry));
 

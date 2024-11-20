@@ -1,32 +1,32 @@
-import {type Config, Skills, ProjectTags} from '../../config/config_types.ts';
+import {type Config, ProjectTag, Skill} from '../../config/config_types.ts';
 
 const config: Config = {
     url: "http://localhost",
     name: "TH098",
     skills: {
         back_end: [
-            Skills.Cpp,
-            Skills.C,
-            Skills.Python,
-            Skills.NodeJS,
-            Skills.Rust
+            Skill.Cpp,
+            Skill.C,
+            Skill.Python,
+            Skill.NodeJS,
+            Skill.Rust
         ],
         front_end: [
-            Skills.HTML,
-            Skills.CSS,
-            Skills.Astro,
-            Skills.JavaScript,
-            Skills.TypeScript
+            Skill.HTML,
+            Skill.CSS,
+            Skill.Astro,
+            Skill.JavaScript,
+            Skill.TypeScript
         ],
         tech: [
-            Skills.VSCode,
-            Skills.Git,
-            Skills.GitHub,
-            Skills.MySQL
+            Skill.VSCode,
+            Skill.Git,
+            Skill.GitHub,
+            Skill.MySQL
         ],
         other: []
     },
-    projects: [{name: "test", tags: [ProjectTags.OpenSource], technologies: [Skills.JavaScript]}],
+    projects: [{name: "test", tags: [ProjectTag.OpenSource], technologies: [Skill.JavaScript]}],
     links: {
         github: "https://github.com/TH098F",
         email: "mailto:th098f@proton.me"

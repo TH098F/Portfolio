@@ -1,222 +1,89 @@
-export enum Skills {
-    C, Cpp, Rust, TypeScript, Java, JavaScript, Csharp, Python,
-    NodeJS, ExpressJS,
-    CSS, HTML, Sass,
-    React, Astro,
-    VSCode, Git, GitHub,
-    MySQL, MongoDB, REST
+interface SkillEntry {
+    name: string, // the string to display for its name
+    color: string, // TODO: maybe make this into actual color type
+    icon: string, // CSS class(es) of the icon
+    link: string
 };
 
-export namespace Skills {
-    export function color(s: Skills): string {
-        switch (s) {
-            case Skills.C:
-                return "";
-            case Skills.Cpp:
-                return "";
-            case Skills.Rust:
-                return "";
-            case Skills.TypeScript:
-                return "#3178C6";
-            case Skills.Java:
-                return "";
-            case Skills.JavaScript:
-                return "#fff700";
-            case Skills.Csharp:
-                return "";
-            case Skills.Python:
-                return "";
-            case Skills.CSS:
-                return "#2071fe";
-            case Skills.HTML:
-                return "#ff3300";
-            case Skills.Sass:
-                return "";
-            case Skills.React:
-                return "#61DBFB";
-            case Skills.Astro:
-                return "#FF3E00";
-            case Skills.VSCode:
-                return "#007ACC";
-            case Skills.Git:
-                return "#F34F29";
-            case Skills.GitHub:
-                return "#eee";
-            case Skills.MySQL:
-                return "#FFD700";
-            case Skills.MongoDB:
-                return "#47A248";
-            case Skills.REST:
-                return "#FF5733";
-            default:
-                return "#0"
-        }
-    }
-    export function link(s: Skills): string {
-        switch (s) {
-            case Skills.C:
-                return undefined;
-            case Skills.Cpp:
-                return undefined;
-            case Skills.Rust:
-                return undefined;
-            case Skills.TypeScript:
-                return "https://www.typescriptlang.org";
-            case Skills.Java:
-                return undefined;
-            case Skills.JavaScript:
-                return undefined;
-            case Skills.Csharp:
-                return undefined;
-            case Skills.Python:
-                return undefined;
-            case Skills.CSS:
-                return undefined;
-            case Skills.HTML:
-                return undefined;
-            case Skills.Sass:
-                return undefined;
-            case Skills.React:
-                return "https://react.dev";
-            case Skills.Astro:
-                return "https://astro.build";
-            case Skills.VSCode:
-                return "https://code.visualstudio.com";
-            case Skills.Git:
-                return "https://git-scm.com";
-            case Skills.GitHub:
-                return "https://github.com";
-            case Skills.MySQL:
-                return "https://www.mysql.com";
-            case Skills.MongoDB:
-                return "https://www.mongodb.com";
-            case Skills.REST:
-                return undefined;
-            default:
-                return undefined;
-        }
-    }
-    export function icon(s: Skills): string {
-        switch (s) {
-            case Skills.C:
-                return "";
-            case Skills.Cpp:
-                return "";
-            case Skills.Rust:
-                return "";
-            case Skills.TypeScript:
-                return "lni lni-typescript";
-            case Skills.Java:
-                return "";
-            case Skills.JavaScript:
-                return "fab fa-js";
-            case Skills.Csharp:
-                return "";
-            case Skills.Python:
-                return "";
-            case Skills.CSS:
-                return "fab fa-css3-alt";
-            case Skills.HTML:
-                return "fab fa-html5";
-            case Skills.Sass:
-                return "fab fa-sass";
-            case Skills.React:
-                return "fab fa-react";
-            case Skills.Astro:
-                return "fas fa-rocket";
-            case Skills.VSCode:
-                return "lni lni-vs-code";
-            case Skills.Git:
-                return "fab fa-git-alt";
-            case Skills.GitHub:
-                return "fab fa-github";
-            case Skills.MySQL:
-                return "lni lni-mysql";
-            case Skills.MongoDB:
-                return "lni lni-mongodb";
-            case Skills.REST:
-                return "fas fa-network-wired";
-            default:
-                return "";
-        }
-    }
-    export function name(s: Skills): string {
-        switch (s) {
-            case Skills.C:
-                return "C";
-            case Skills.Cpp:
-                return "C++";
-            case Skills.Rust:
-                return "Rust";
-            case Skills.TypeScript:
-                return "TypeScript";
-            case Skills.Java:
-                return "Java";
-            case Skills.JavaScript:
-                return "JavaScript";
-            case Skills.Csharp:
-                return "C#";
-            case Skills.Python:
-                return "Python";
-            case Skills.CSS:
-                return "CSS";
-            case Skills.HTML:
-                return "HTML";
-            case Skills.Sass:
-                return "Sass";
-            case Skills.React:
-                return "React";
-            case Skills.Astro:
-                return "Astro";
-            case Skills.VSCode:
-                return "VS Code";
-            case Skills.Git:
-                return "Git";
-            case Skills.GitHub:
-                return "GitHub";
-            case Skills.MySQL:
-                return "MySQL";
-            case Skills.MongoDB:
-                return "MongoDB";
-            case Skills.REST:
-                return "REST";
-            default:
-                return "undefined";
-        }
-    }
+export enum Skill {
+    C, Cpp, CSharp, Python, Rust, Java, JavaScript, TypeScript, PHP, Ruby, Go, Swift, Kotlin, Elixir, Erlang, Lua, Perl,
+    HTML, CSS,
+    React, Angular, Vue, NodeJS, ExpressJS, Astro,
+    SQL, MySQL, SQLite, PostGreSQL, MongoDB, REST,
+    VSCode, Git, GitHub
+};
+
+export const Skills = new Map<Skill, SkillEntry>([
+    // languages
+    [Skill.C, { name: "C", color: "#000000", icon: "", link: "" }],
+    [Skill.Cpp, { name: "C++", color: "#000000", icon: "", link: "" }],
+    [Skill.CSharp, { name: "C#", color: "#000000", icon: "", link: "" }],
+    [Skill.Python, { name: "Python", color: "#000000", icon: "", link: "" }],
+    [Skill.Rust, { name: "Rust", color: "#000000", icon: "", link: "" }],
+    [Skill.Java, { name: "Java", color: "#000000", icon: "", link: "" }],
+    [Skill.JavaScript, { name: "JavaScript", color: "#fff700", icon: "fab fa-js", link: "" }],
+    [Skill.TypeScript, { name: "TypeScript", color: "#3178C6", icon: "lni lni-typescript", link: "https://www.typescriptlang.org" }],
+    [Skill.PHP, { name: "PHP", color: "#000000", icon: "", link: "" }],
+    [Skill.Ruby, { name: "Ruby", color: "#000000", icon: "", link: "" }],
+    [Skill.Go, { name: "Go", color: "#000000", icon: "", link: "" }],
+    [Skill.Swift, { name: "Swift", color: "#000000", icon: "", link: "" }],
+    [Skill.Kotlin, { name: "Kotlin", color: "#000000", icon: "", link: "" }],
+    [Skill.Elixir, { name: "Elixir", color: "#000000", icon: "", link: "" }],
+    [Skill.Erlang, { name: "Erlang", color: "#000000", icon: "", link: "" }],
+    [Skill.Lua, { name: "Lua", color: "#000000", icon: "", link: "" }],
+    [Skill.Perl, { name: "Perl", color: "#000000", icon: "", link: "" }],
+
+    // web
+    [Skill.HTML, { name: "HTML", color: "#ff3300", icon: "fab fa-html5", link: "" }],
+    [Skill.CSS, { name: "CSS", color: "#2071fe", icon: "fab fa-css3-alt", link: "" }],
+
+    // JS
+    [Skill.React, { name: "React", color: "#61DBFB", icon: "fab fa-react", link: "https://react.dev" }],
+    [Skill.Angular, { name: "Angular", color: "#000000", icon: "", link: "" }],
+    [Skill.Vue, { name: "Vue", color: "#000000", icon: "", link: "" }],
+    [Skill.NodeJS, { name: "Node.js", color: "#000000", icon: "", link: "" }],
+    [Skill.ExpressJS, { name: "Express.js", color: "#000000", icon: "", link: "" }],
+    [Skill.Astro, { name: "Astro", color: "#FF3E00", icon: "fas fa-rocket", link: "https://astro.build" }],
+
+    // DB
+    [Skill.SQL, { name: "SQL", color: "#000000", icon: "", link: "" }],
+    [Skill.MySQL, { name: "MySQL", color: "#FFD700", icon: "lni lni-mysql", link: "" }],
+    [Skill.SQLite, { name: "SQLite", color: "#000000", icon: "", link: "" }],
+    [Skill.PostGreSQL, { name: "PostGreSQL", color: "#000000", icon: "", link: "" }],
+    [Skill.MongoDB, { name: "MongoDB", color: "#47A248", icon: "lni lni-mongodb", link: "" }],
+    [Skill.REST, { name: "REST", color: "#FF5733", icon: "fas fa-network-wired", link: "" }],
+
+    // TECH
+    [Skill.VSCode, { name: "VS Code", color: "#007ACC", icon: "lni lni-vs-code", link: "https://code.visualstudio.com" }],
+    [Skill.Git, { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "" }],
+    [Skill.GitHub, { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "" }],
+]);
+
+interface ProjectTagEntry {
+    name: string,
+    icon: string
 }
 
-export enum ProjectTags {
+export enum ProjectTag {
     FullStack,
     FrontEnd,
     BackEnd,
     OpenSource,
     ClosedSource
-};
-
-export namespace ProjectTags {
-    export function string(s: ProjectTags): string {
-        switch (s) {
-            case ProjectTags.FullStack:
-                return "Full-Stack";
-            case ProjectTags.FrontEnd:
-                return "Front-End";
-            case ProjectTags.BackEnd:
-                return "Back-End";
-            case ProjectTags.OpenSource:
-                return "Open-Source";
-            case ProjectTags.ClosedSource:
-                return "Closed-Source";
-            default:
-                return "undefined";
-        }
-    }
 }
+
+export const ProjectTags = new Map<ProjectTag, ProjectTagEntry>([
+    [ProjectTag.FullStack, { name: "Full-Stack", icon: "" }],
+    [ProjectTag.FrontEnd, { name: "Front-End", icon: "" }],
+    [ProjectTag.BackEnd, { name: "Back-End", icon: "" }],
+    [ProjectTag.OpenSource, { name: "Open-Source", icon: "" }],
+    [ProjectTag.ClosedSource, { name: "Closed-Source", icon: "" }],
+]);
 
 export interface Project {
     name: string,
-    tags: ProjectTags[],
-    technologies: Skills[],
+    tags: ProjectTag[],
+    technologies: Skill[],
     preview?: string,
     desc?: string
 };
@@ -227,10 +94,10 @@ export interface Config {
     url?: string,
     name: string,
     skills: {
-        back_end: Skills[],
-        front_end: Skills[],
-        tech: Skills[],
-        other: Skills[]
+        back_end: Skill[],
+        front_end: Skill[],
+        tech: Skill[],
+        other: Skill[]
     },
     projects: Project[],
     // introduction?: string,

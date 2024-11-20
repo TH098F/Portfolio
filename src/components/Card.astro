@@ -1,9 +1,9 @@
 ---
-import { Skills } from '../../config/config_types';
+import { Skill, Skills } from '../../config/config_types';
 
 interface Props {
   title: string;
-  skills: Skills[];
+  skills: Skill[];
 }
 
 const { title, skills } = Astro.props;
@@ -18,13 +18,13 @@ const { title, skills } = Astro.props;
     <ul>
 	{skills.map(skill => (
 		<li key={skill}>
-			{Skills.link(skill) ? (
-				<a href={Skills.link(skill)} target="_blank" rel="noopener noreferrer">
-					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
+			{Skills.get(skill).link ? (
+				<a href={Skills.get(skill).link} target="_blank" rel="noopener noreferrer">
+					<i class={Skills.get(skill).icon} style={{ color: Skills.get(skill).color }}></i> {Skills.get(skill).name}
 				</a>
 			) : (
 				<>
-					<i class={Skills.icon(skill)} style={{ color: Skills.color(skill) }}></i> {Skills.name(skill)}
+					<i class={Skills.get(skill).icon} style={{ color: Skills.get(skill).color }}></i> {Skills.get(skill).name}
 				</>
 			)}
 		</li>
