@@ -1,10 +1,12 @@
 ---
+import { ProjectTags, Skills, type ProjectTag, type Skill } from '../../config/config_types';
+
 interface Props {
     projectname: string;
     projectid: string;
     projectdescription: string;
-    technologies: { name: string; icon: string, color: string }[];
-    projecttags: { name: string }[];
+    technologies: Skill[];
+    projecttags: ProjectTag[];
     projectpreview: string;
     projectlinks: {
         github: string;
@@ -20,62 +22,6 @@ const {
     projectpreview = '',
     projectlinks = { github: '', live: '' }
 } = Astro.props;
-
-function getIconClass(tagName: string) {
-  switch (tagName) {
-    case 'web development':
-        return 'fas fa-globe';
-    case 'mobile development':
-        return 'fas fa-mobile-alt';
-    case 'full stack':
-        return 'fas fa-server';
-    case 'front end':
-        return 'fas fa-desktop';
-    case 'back end':
-        return 'fas fa-cogs';
-    case 'design':
-        return 'fas fa-palette';
-    case 'game development':
-        return 'fas fa-gamepad';
-    case 'data science':
-        return 'fas fa-chart-line';
-    default:
-        return 'fas fa-code';
-  }
-}
-
-function getIconClass2(technologyName) {
-  switch (technologyName) {
-    case 'HTML':
-      return 'fab fa-html5';
-    case 'CSS':
-      return 'fab fa-css3-alt';
-    case 'JavaScript':
-      return 'fab fa-js';
-    case 'React':
-      return 'fab fa-react';
-    case 'Bootstrap':
-      return 'fab fa-bootstrap';
-    case 'Sass':
-      return 'fab fa-sass';
-    case 'Node.js':
-      return 'fab fa-node-js';
-    case 'Express.js':
-      return 'fas fa-server';
-    case 'MongoDB':
-      return 'fas fa-database';
-    case 'Git':
-      return 'fab fa-git-alt';
-    case 'Astro':
-        return 'fas fa-rocket';
-    case 'TypeScript':
-        return 'lni lni-typescript';
-    case 'ExpressJS':
-        return 'fas fa-server';
-    default:
-      return '';
-  }
-}
 ---
 <script>
     const projectpreviews = document.querySelectorAll('.project-preview img');
@@ -116,7 +62,7 @@ function getIconClass2(technologyName) {
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
                 const projectid = button.id;
-                window.location.href = `/projects/${projectid}`;
+                // window.location.href = `/projects/${projectid}`; //TODO
             });
         });
 </script>
@@ -131,7 +77,7 @@ function getIconClass2(technologyName) {
             <ul>
                 {projecttags.map((tag) => (
                     <li>
-                        <p> <i class={getIconClass(tag.name)}></i> {tag.name}</p>
+                        <p> <i class={ProjectTags.get(tag).icon}></i> {ProjectTags.get(tag).name}</p>
                     </li>
                 ))}
             </ul>
@@ -149,7 +95,7 @@ function getIconClass2(technologyName) {
         <ul>
             {technologies.map((technology) => (
                 <li>
-                    <p><i class={getIconClass2(technology.name)} style={{ color: technology.color }}></i> {technology.name}</p>
+                    <p><i class={Skills.get(technology).icon} style={{ color: Skills.get(technology).color }}></i> {Skills.get(technology).name}</p>
                 </li>
             ))}
         </ul>
