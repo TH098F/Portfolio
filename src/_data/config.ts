@@ -33,7 +33,7 @@ const config: Config = {
     projects: [
         {
             name: "Arch Engine", tags: [ProjectTag.ClosedSource, ProjectTag.Graphics], technologies: [Skill.Cpp, Skill.C, Skill.VSCode],
-            desc: "\"Arch\" is an API-agnostic rendering engine build on top of Vulkan and DirectX11. I plan to extend it to DirectX12 and OpenGL in the future. Arch was originally just a way for me to teach myself Vulkan, but i later turned it into a whole project and added DirectX11 support. The pure Vulkan version was written in C, but I later changed to C++ for it's features like 'methods'"
+            desc: "\"Arch\" is an API-agnostic rendering engine built on top of Vulkan and DirectX11. I plan to extend it to DirectX12 and OpenGL in the future. Arch was originally just a way for me to teach myself Vulkan, but i later turned it into a whole project and added DirectX11 support. The pure Vulkan version was written in C, but I later changed to C++ for it's features like 'methods'"
         },
         {
             name: "Portfolio", tags: [ProjectTag.OpenSource, ProjectTag.WebDev], technologies: [Skill.TypeScript, Skill.Astro, Skill.CSS],
