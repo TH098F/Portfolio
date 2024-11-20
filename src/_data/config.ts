@@ -2,7 +2,7 @@ import {type Config, ProjectTag, Skill} from '../../config/config_types.ts';
 
 const config: Config = {
     url: "http://th098f.github.io",
-    base: "portfolio_v2",
+    base: "Portfolio",
     name: "TH098",
     skills: {
         back_end: [
@@ -42,8 +42,8 @@ const config: Config = {
             desc: "This Portfolio is a fork of theMelon's portfolio. I wanted to turn his portfolio into a dynamic version which could then be used as an easy to use 'template'.",
             preview: "portfolioPreview.png",
             links: {
-                github: "https://github.com/TH098F/portfolio_v2",
-                live: "https://th098f.github.io/portfolio_v2"
+                github: "https://github.com/TH098F/Portfolio",
+                live: "https://th098f.github.io/Portfolio"
             }
         }
     ],
