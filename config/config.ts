@@ -1,4 +1,4 @@
-import {type Config, ProjectTag, Skill} from '../../config/config_types.ts';
+import {type Config, ProjectTag, Skill} from './config_types.ts';
 
 const config: Config = {
     url: "http://th098f.github.io",
