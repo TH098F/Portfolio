@@ -1,1 +1,1 @@
-Check <a href="https://printer.discord.com">\>this\<</a> out!
+Check [>this<](https://printer.discord.com/) out!
