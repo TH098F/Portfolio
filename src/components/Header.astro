@@ -1,16 +1,19 @@
 ---
 import config from "../../config/config"
+import { getLocale, type langType } from "../i18n/utils"
+
+const lang = Astro.currentLocale as langType;
 ---
 <script src="https://kit.fontawesome.com/cae7f6ee03.js" crossorigin="anonymous"></script>
 <div class="nav">
     <nav class="navlinks left">
-        <a href={"/" + config.base + "#aboutme"}>About me</a>
-        <a href={"/" + config.base + "#projects"}>Projects</a>
-        <a href={"/" + config.base + "/resume"}>Resume</a>
+        <a href={"/" + config.base + "#aboutme"}>{getLocale(lang, "header.aboutme")}</a>
+        <a href={"/" + config.base + "#projects"}>{getLocale(lang, "header.projects")}</a>
+        <a href={"/" + config.base + "/resume"}>{getLocale(lang, "header.resume")}</a>
     </nav>
     <nav class="navlinks right">
-        <a href="https://github.com/TH098F/portfolio_v2" target="_blank" id="nav-github"><i class="fab fa-github"></i> Visit on GitHub</a>
-        <a href={"mailto:" + config.links.email} id="nav-contact"><i class="fa fa-paper-plane"></i> Get in Touch</a>
+        <a href="https://github.com/TH098F/portfolio_v2" target="_blank" id="nav-github"><i class="fab fa-github"></i>{getLocale(lang, "header.github")}</a>
+        <a href={"mailto:" + config.links.email} id="nav-contact"><i class="fa fa-paper-plane"></i>{getLocale(lang, "header.email")}</a>
     </nav>
 </div>
 <style>

@@ -1,0 +1,12 @@
+---
+import config from '../../../config/config';
+import Layout from '../../layouts/Layout.astro';
+
+import { getLocale, type langType, _getStaticPaths } from "../../i18n/utils"
+
+export const getStaticPaths = _getStaticPaths;
+const lang = Astro.params.locale as langType;
+---
+<Layout title='test'>
+    test
+</Layout>

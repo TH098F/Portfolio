@@ -1,5 +1,8 @@
 ---
 import { ProjectTags, Skills, type ProjectTag, type Skill } from '../../config/config_types';
+import { getLocale, type langType } from '../i18n/utils';
+
+const lang = Astro.currentLocale as langType;
 
 const projectDescMaxLen = 500;
 
@@ -72,7 +75,7 @@ const {
 <div class="project">
     <h2>{projectname}</h2>
     <div class="project-preview">
-        <img src={projectpreview} alt={projectname} id={projectname} />
+        <img src={"/" + projectpreview} alt={projectname} id={projectname} />
     </div>
     <div class="project-short-infos">
         <div class="project-tags">
@@ -90,10 +93,10 @@ const {
     <br>
     <div class="project-description">
         <p id="text">{projectdescription.slice(0, projectDescMaxLen)}{projectdescription.length > projectDescMaxLen ? '...' : ''}</p>
-        <button class="readall" id={projectid} onclick="readall()">Read all</button>
+        <button class="readall" id={projectid} onclick="readall()">{getLocale(lang, "projects.readAll")}</button>
     </div>
     <div class="project-technologies">
-        <h4>Built with :</h4>
+        <h4>{getLocale(lang, "projects.builtWith")}</h4>
         <ul>
             {technologies.map((technology) => (
                 <li>
@@ -106,12 +109,12 @@ const {
     <div class="project-links">
         {projectlinks.github && (
             <a href={projectlinks.github} target="_blank" rel="noopener noreferrer" id="link-gh">
-                <i class="fa fa-github"></i> View on GitHub
+                <i class="fa fa-github"></i> {getLocale(lang, "projects.github")}
             </a>
         )}
         {projectlinks.live && (
             <a href={projectlinks.live} target="_blank" rel="noopener noreferrer" id="link-live">
-                Live Preview <i class="fa fa-arrow-up-right-from-square"></i>
+                {getLocale(lang, "projects.livePreview")} <i class="fa fa-arrow-up-right-from-square"></i>
             </a>
         )}
     </div>

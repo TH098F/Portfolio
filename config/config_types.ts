@@ -11,7 +11,8 @@ export enum Skill {
     React, Angular, Vue, NodeJS, ExpressJS, Astro,
     SQL, MySQL, SQLite, PostGreSQL, MongoDB, REST,
     VSCode, Git, GitHub,
-    Vulkan, DirectX, OpenGL
+    Vulkan, DirectX, OpenGL,
+    Make
 };
 
 export const Skills = new Map<Skill, SkillEntry>([
@@ -59,9 +60,13 @@ export const Skills = new Map<Skill, SkillEntry>([
     [Skill.Git, { name: "Git", color: "#F34F29", icon: "fab fa-git-alt", link: "https://git-scm.com" }],
     [Skill.GitHub, { name: "GitHub", color: "#eee", icon: "fab fa-github", link: "https://github.com" }],
 
+    // GRAPHICS
     [Skill.Vulkan, { name: "Vulkan", color: "#000000", icon: "", link: "https://vulkan.org" }],
     [Skill.DirectX, { name: "DirectX", color: "#000000", icon: "", link: "" }],
     [Skill.OpenGL, { name: "OpenGL", color: "#000000", icon: "", link: "https://opengl.org" }],
+
+    // TOOLS
+    [Skill.Make, { name: "Make", color: "#000000", icon: "", link: "https://www.gnu.org/software/make"}]
 ]);
 
 interface ProjectTagEntry {
@@ -100,7 +105,7 @@ export interface Project {
     tags: ProjectTag[],
     technologies: Skill[],
     preview?: string,
-    desc?: string,
+    desc?: {en?: string, de?: string},
     links?: {
         github?: string,
         live?: string
@@ -126,5 +131,8 @@ export interface Config {
         email?: string,
         discord?: string
     },
-    typewrite_words?: string[]
+    typewriter_words?: {
+        en: string[],
+        de: string[],
+    }
 };
